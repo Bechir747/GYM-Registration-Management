@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <h1>Royal Club GYM</h1>
+  <span class="example-spacer"></span>
+
+  <button routerLink="/list" mat-raised-button color="accent">
+    registered players
+  </button>
+</mat-toolbar>
+
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>
+<lib-ng-toast></lib-ng-toast>
+<ng-confirm></ng-confirm>

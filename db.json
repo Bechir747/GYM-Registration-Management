@@ -1,0 +1,43 @@
+{
+  "enquiry": [
+    {
+      "firstName": "bechir",
+      "lastName": "benothman",
+      "email": "Bechir@gmail.com",
+      "mobile": "123",
+      "weight": 65,
+      "height": 1.7,
+      "requireTrainer": "YES",
+      "gender": "Male",
+      "package": "monthly",
+      "important": [
+        "Healthier Digetive System"
+      ],
+      "beenGymBefore": "YES",
+      "enquiryDate": "2023-04-17T00:00:00.000Z",
+      "bmi": 22.49134948096886,
+      "bmiresult": "Normal",
+      "id": 1
+    },
+    {
+      "firstName": "yasser",
+      "lastName": "mahjoub",
+      "email": "yasser@gmail.com",
+      "mobile": "54012369",
+      "weight": 72,
+      "height": 1.73,
+      "requireTrainer": "NO",
+      "gender": "Male",
+      "package": "yearly",
+      "important": [
+        "Energy and Endurance",
+        "Building Lean Muscle"
+      ],
+      "beenGymBefore": "NO",
+      "enquiryDate": "2023-04-24T00:00:00.000Z",
+      "bmi": 24.0569347455645,
+      "bmiresult": "Normal",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+<div class="logo text-center">
+  <img width="100px" src="./assets/Royal.jpg" alt="logo de Royal Club">
+</div>
+
+<div class="registration-form m-3 p-4">
+  <form [formGroup]="registerForm">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input formControlName="firstName"  matInput placeholder="First Name">
+
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input formControlName="lastName" matInput placeholder="Last Name">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput placeholder="Email">
+
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile Number</mat-label>
+          <input formControlName="mobile" matInput placeholder="Mobile Number">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Weight</mat-label>
+          <input formControlName="weight"type="number" formControlName="weight" matInput placeholder="weight">
+          <mat-icon matSuffix>line-weight</mat-icon>
+          <mat-hint>Unit is kg</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Height</mat-label>
+          <input [readonly]="!this.registerForm.value?.weight" formControlName="height" type="number" formControlName="height" matInput placeholder="height">
+          <mat-icon matSuffix><i class="fa fa-text-height" aria-hidden="true"></i></mat-icon>
+          <mat-hint>Unit is meters</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>BMI</mat-label>
+          <input readonly formControlName="bmi" matInput placeholder="BMI">
+          <mat-icon matSuffix><i class="fa fa-sort-numeric-desc" aria-hidden="true"></i></mat-icon>
+        </mat-form-field>
+
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>BMI Result</mat-label>
+          <input readonly formControlName="bmiresult" matInput placeholder="BMI result">
+          <mat-icon matSuffix><i class="fa fa-check" aria-hidden="true"></i></mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 mt-3">
+        <label id="example-radio-group-label">Do you equire a trainer ?</label>
+        <mat-radio-group formControlName="requireTrainer" class="example-radio-group">
+          <mat-radio-button class="example-radio-button" *ngFor="let trainerOpt of ['YES', 'NO']" [value]="trainerOpt">
+            {{trainerOpt}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <div> Selected option is: </div>
+      </div>
+      <div class="col-md-6 mt-3">
+        <label id="example-radio-group-label">What is your Gender ?</label>
+        <mat-radio-group formControlName="gender"class="example-radio-group">
+          <mat-radio-button class="example-radio-button" *ngFor="let gender of genders" [value]="gender">
+            {{gender}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <div> Selected gender is: </div>
+      </div>
+      <div class="col-md-6 ">
+        <mat-form-field appearance="outline">
+          <mat-label>Select Package</mat-label>
+          <mat-select formControlName="package" name="Package">
+            <mat-option *ngFor="let package of packages" [value]="package">
+              {{package}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 ">
+        <mat-form-field appearance="outline">
+          <mat-label >Which of the following options is important to you ?</mat-label>
+          <mat-select formControlName="important"  multiple>
+            <mat-option *ngFor="let importantOpt of importantlist" [value]="importantOpt">
+              {{importantOpt}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 mt-3">
+        <label id="example-radio-group-label">Have you been GYM before ?</label>
+        <mat-radio-group formControlName="beenGymBefore" class="example-radio-group">
+          <mat-radio-button class="example-radio-button" *ngFor="let beenGYM of ['YES','NO']" [value]="beenGYM">
+            {{beenGYM}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <div> Selected Option is: </div>
+      </div>
+      <div class="col-md-6 mt-3">
+        <mat-form-field appearance="outline">
+          <mat-label>Choose a date</mat-label>
+          <input formControlName="enquiryDate" matInput [matDatepicker]="picker">
+          <mat-hint>Enquiry Date</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+    <button *ngIf="!isUpdateActive"  (click)="submit()" class="mt-4"mat-raised-button color="accent">Submit</button>
+    <button *ngIf="isUpdateActive" (click)="update()" class="mt-4"mat-raised-button color="accent">Update</button>
+  </form>
+
+</div>
